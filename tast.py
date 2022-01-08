@@ -12,3 +12,6 @@ f.close()
 upbit = pyupbit.Upbit(access, secret)
 
 upbit.buy_limit_order("KRW-XRP", 200, 100)
+
+while True:
+    upbit.buy_limit_order("KRW-XRP", 200, 100)
