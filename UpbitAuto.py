@@ -26,7 +26,6 @@ def max_k():
             MAK_K = k/10
 
         ror_1 = ror
-    print(type(MAK_K))
 
     return MAK_K
 
@@ -56,7 +55,7 @@ while True:
     now = datetime.datetime.now()
 
     # 목표가 갱신 k값 설정
-    if now.hour == 20 and now.minute == 52 and 20 < now.second < 30: 
+    if now.hour == 9 and now.minute == 0 and 10 < now.second < 20: 
         k = max_k()
         target = cal_target("KRW-BTC")
         time.sleep(10)
