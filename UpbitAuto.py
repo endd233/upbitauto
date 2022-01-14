@@ -10,7 +10,7 @@ def max_k():
     ror_1 = 0
     MAK_K = 0.1
     for k in range(1, 10):
-        df = pyupbit.get_ohlcv("KRW-BTC", count=5)
+        df = pyupbit.get_ohlcv("KRW-BTC", count=7)
         # print(df)
         df['range'] = (df['high'] - df['low']) * k/10
         # print(df['range'])
@@ -50,9 +50,17 @@ op_mode = False
 hold = False
 target = 0
 
+k = max_k()
+price = pyupbit.get_current_price("KRW-BTC")
+target = cal_target("KRW-BTC")
+if target > price:
+    op_mode = True
+    print(f"REFRESH! => target price :{target}, k :{k}")
+
 while True:
     price = pyupbit.get_current_price("KRW-BTC")
     now = datetime.datetime.now()
+    
 
     # 목표가 갱신 k값 설정
     if now.hour == 9 and now.minute == 0 and 20 < now.second < 30: 
