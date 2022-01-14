@@ -80,7 +80,7 @@ while True:
         op_mode = False
         time.sleep(10)
 
-    # print(f"현재시간: {now} 목표가: {target} 현재가: {price} 보유상태: {hold} 동작상태: {op_mode} k값 {k}")
+    print(f"current time: {now} target price: {target} current price: {price} hold: {hold} working: {op_mode} k value: {k}")
     
 
     time.sleep(1)
